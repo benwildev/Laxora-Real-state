@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxora Properties | Extraordinary Luxury Living</title>
+  <meta name="description" content="Explore curated collections of the world's most exclusive homes and investment properties.">
+  
+  <!-- Google Fonts: Playfair Display / Cormorant Garamond / Outfit / Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for crisp UI icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Preloader Screen -->
+  <div id="loader" class="loader-overlay">
+    <div class="loader-content">
+      <div class="loader-crest">
+        <svg viewBox="0 0 60 60" width="48" height="48" fill="none">
+          <circle cx="30" cy="30" r="28" stroke="#c59b56" stroke-width="1.5" stroke-dasharray="4 2"/>
+          <path d="M22 18V42H38M22 30H34" stroke="#e8d08d" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="loader-brand">LUXORA PROPERTIES</div>
+      <div class="loader-bar-container">
+        <div id="loader-bar" class="loader-bar"></div>
+      </div>
+      <div class="loader-status">
+        <span id="loader-percent">0%</span>
+        <span class="loader-caption">Loading Experience</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Mansion Canvas Viewport (Continuous Smooth Scroll Scrubbing) -->
+  <div class="canvas-viewport">
+    <canvas id="hero-canvas"></canvas>
+    <div class="canvas-ambient-gradient"></div>
+  </div>
+
+  <!-- Main Website Container (Smooth Scroll Surface) -->
+  <div class="main-wrapper" id="smooth-wrapper">
+    <div class="content-body" id="smooth-content">
+
+      <!-- 1. Floating Top Navigation Bar -->
+      <header class="navbar-wrapper">
+        <nav class="navbar glass-panel">
+          <a href="#" class="brand-logo">
+            <div class="brand-crest">
+              <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
+                <circle cx="20" cy="20" r="18" stroke="#c59b56" stroke-width="1.2"/>
+                <path d="M15 12V28H25M15 20H23" stroke="#b88636" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="brand-text">
+              <span class="brand-title">LUXORA</span>
+              <span class="brand-subtitle">PROPERTIES</span>
+            </div>
+          </a>
+
+          <ul class="nav-links">
+            <li class="nav-item active"><a href="#home">Home</a></li>
+            <li class="nav-item"><a href="#properties">Properties</a></li>
+            <li class="nav-item"><a href="#buy">Buy</a></li>
+            <li class="nav-item"><a href="#sell">Sell</a></li>
+            <li class="nav-item"><a href="#invest">Invest</a></li>
+            <li class="nav-item"><a href="#about">About Us</a></li>
+            <li class="nav-item dropdown">
+              <a href="#pages">Pages <i class="fa-solid fa-chevron-down nav-chevron"></i></a>
+            </li>
+          </ul>
+
+          <div class="nav-actions">
+            <a href="tel:+18001234567" class="nav-phone">
+              <i class="fa-solid fa-phone"></i>
+              <span>+1 (800) 123-4567</span>
+            </a>
+            <a href="#contact" class="btn btn-gold btn-sm">Contact Us</a>
+          </div>
+        </nav>
+      </header>
+
+      <!-- 2. Hero Section -->
+      <section class="hero-section" id="home">
+        <div class="hero-container">
+          <div class="hero-text-block">
+            <h1 class="hero-title">
+              Discover Extraordinary<br>
+              <span class="hero-title-serif">Luxury Living</span>
+            </h1>
+            <p class="hero-subtitle">
+              Explore curated collections of the world's most exclusive homes and investment properties.
+            </p>
+            <div class="hero-btn-group">
+              <a href="#tours" class="btn btn-gold">
+                <span>Schedule a Private Tour</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="#properties" class="btn btn-glass">
+                <span>Explore Properties</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Social Proof / Trust Logos Bar -->
+      <section class="trust-bar-section">
+        <div class="trust-container glass-card">
+          <p class="trust-heading">Trusted by discerning clients worldwide</p>
+          <div class="trust-logos">
+            <div class="trust-logo-item logo-forbes">Forbes</div>
+            <div class="trust-logo-item logo-robb">RobbReport</div>
+            <div class="trust-logo-item logo-mansion">MANSION <span>GLOBAL</span></div>
+            <div class="trust-logo-item logo-bloomberg">BLOOMBERG <span>PROPERTY</span></div>
+            <div class="trust-logo-item logo-christies">CHRISTIE'S <span>INTERNATIONAL REAL ESTATE</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Floating Property Filter / Search Bar -->
+      <section class="search-filter-section">
+        <div class="search-filter-container glass-card">
+          <div class="filter-item">
+            <div class="filter-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="filter-content">
+              <span class="filter-label">Location</span>
+              <div class="filter-select">
+                <span class="selected-val">Any Location</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-divider"></div>
+
+          <div class="filter-item">
+            <div class="filter-icon"><i class="fa-solid fa-house-chimney"></i></div>
+            <div class="filter-content">
+              <span class="filter-label">Property Type</span>
+              <div class="filter-select">
+                <span class="selected-val">Any Type</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-divider"></div>
+
+          <div class="filter-item">
+            <div class="filter-icon"><i class="fa-solid fa-coins"></i></div>
+            <div class="filter-content">
+              <span class="filter-label">Price Range</span>
+              <div class="filter-select">
+                <span class="selected-val">$500,000 - $10M+</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-divider"></div>
+
+          <div class="filter-item">
+            <div class="filter-icon"><i class="fa-solid fa-bed"></i></div>
+            <div class="filter-content">
+              <span class="filter-label">Bedrooms</span>
+              <div class="filter-select">
+                <span class="selected-val">Any</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-gold btn-search">
+            <span>Search Properties</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </div>
+      </section>
+
+      <!-- 5. Featured Properties Section -->
+      <section class="section featured-properties-section" id="properties">
+        <div class="section-container">
+          <div class="section-header">
+            <h2 class="section-title">Featured Properties</h2>
+            <div class="section-header-right">
+              <a href="#all-properties" class="view-all-link">
+                <span>View All Properties</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <div class="carousel-nav-buttons">
+                <button class="carousel-btn prev-btn" aria-label="Previous property"><i class="fa-solid fa-arrow-left"></i></button>
+                <button class="carousel-btn next-btn" aria-label="Next property"><i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="properties-grid">
+            <!-- Property 1 -->
+            <div class="property-card glass-card">
+              <div class="property-img-wrap">
+                <img src="assets/property_oceanfront_villa.jpg" alt="Oceanfront Villa" class="property-img" loading="lazy">
+                <span class="property-badge badge-featured">FEATURED</span>
+                <button class="favorite-btn" aria-label="Save to favorites"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <div class="property-info">
+                <div class="property-header-row">
+                  <h3 class="property-name">Oceanfront Villa</h3>
+                  <span class="property-price">$8,750,000</span>
+                </div>
+                <p class="property-location"><i class="fa-solid fa-location-dot"></i> Malibu, California</p>
+                <div class="property-specs">
+                  <span class="spec-item"><i class="fa-solid fa-bed"></i> 5 Beds</span>
+                  <span class="spec-item"><i class="fa-solid fa-bath"></i> 6 Baths</span>
+                  <span class="spec-item"><i class="fa-solid fa-vector-square"></i> 7,200 sqft</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Property 2 -->
+            <div class="property-card glass-card">
+              <div class="property-img-wrap">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Skyline Penthouse" class="property-img" loading="lazy">
+                <span class="property-badge badge-new">NEW LISTING</span>
+                <button class="favorite-btn" aria-label="Save to favorites"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <div class="property-info">
+                <div class="property-header-row">
+                  <h3 class="property-name">Skyline Penthouse</h3>
+                  <span class="property-price">$5,600,000</span>
+                </div>
+                <p class="property-location"><i class="fa-solid fa-location-dot"></i> Dubai Marina, UAE</p>
+                <div class="property-specs">
+                  <span class="spec-item"><i class="fa-solid fa-bed"></i> 4 Beds</span>
+                  <span class="spec-item"><i class="fa-solid fa-bath"></i> 5 Baths</span>
+                  <span class="spec-item"><i class="fa-solid fa-vector-square"></i> 5,100 sqft</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Property 3 -->
+            <div class="property-card glass-card">
+              <div class="property-img-wrap">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80" alt="Beverly Hills Estate" class="property-img" loading="lazy">
+                <span class="property-badge badge-exclusive">EXCLUSIVE</span>
+                <button class="favorite-btn" aria-label="Save to favorites"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <div class="property-info">
+                <div class="property-header-row">
+                  <h3 class="property-name">Beverly Hills Estate</h3>
+                  <span class="property-price">$12,900,000</span>
+                </div>
+                <p class="property-location"><i class="fa-solid fa-location-dot"></i> Beverly Hills, CA</p>
+                <div class="property-specs">
+                  <span class="spec-item"><i class="fa-solid fa-bed"></i> 6 Beds</span>
+                  <span class="spec-item"><i class="fa-solid fa-bath"></i> 7 Baths</span>
+                  <span class="spec-item"><i class="fa-solid fa-vector-square"></i> 9,300 sqft</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Property 4 -->
+            <div class="property-card glass-card">
+              <div class="property-img-wrap">
+                <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80" alt="Luxury Apartment" class="property-img" loading="lazy">
+                <span class="property-badge badge-offmarket">OFF MARKET</span>
+                <button class="favorite-btn" aria-label="Save to favorites"><i class="fa-regular fa-heart"></i></button>
+              </div>
+              <div class="property-info">
+                <div class="property-header-row">
+                  <h3 class="property-name">Luxury Apartment</h3>
+                  <span class="property-price">$4,250,000</span>
+                </div>
+                <p class="property-location"><i class="fa-solid fa-location-dot"></i> New York, USA</p>
+                <div class="property-specs">
+                  <span class="spec-item"><i class="fa-solid fa-bed"></i> 3 Beds</span>
+                  <span class="spec-item"><i class="fa-solid fa-bath"></i> 4 Baths</span>
+                  <span class="spec-item"><i class="fa-solid fa-vector-square"></i> 3,200 sqft</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Agent Spotlight & Performance Metrics -->
+      <section class="section agent-metrics-section" id="about">
+        <div class="section-container">
+          <div class="agent-metrics-layout glass-card">
+            <!-- Left: Agent Spotlight -->
+            <div class="agent-spotlight">
+              <div class="agent-badge-title">
+                <span>Meet Our Top Agent</span>
+              </div>
+              <div class="agent-profile-wrap">
+                <div class="agent-avatar-wrap">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Isabella Martinez" class="agent-avatar" loading="lazy">
+                </div>
+                <div class="agent-bio-details">
+                  <h3 class="agent-name">Isabella Martinez</h3>
+                  <p class="agent-role">Senior Luxury Real Estate Advisor</p>
+                  <p class="agent-desc">
+                    With over 12 years of experience in luxury real estate, Isabella specializes in exclusive properties and investment opportunities worldwide.
+                  </p>
+                  <a href="#agent-profile" class="btn btn-gold btn-sm">
+                    <span>View Profile</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Vertical Divider -->
+            <div class="section-vertical-divider"></div>
+
+            <!-- Right: Performance Metrics -->
+            <div class="metrics-grid">
+              <div class="metric-item">
+                <div class="metric-icon-wrap"><i class="fa-solid fa-chart-line"></i></div>
+                <h4 class="metric-value">$2.8B+</h4>
+                <p class="metric-label">Total Sales</p>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-icon-wrap"><i class="fa-solid fa-building-user"></i></div>
+                <h4 class="metric-value">950+</h4>
+                <p class="metric-label">Luxury Properties</p>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-icon-wrap"><i class="fa-solid fa-globe"></i></div>
+                <h4 class="metric-value">23</h4>
+                <p class="metric-label">Countries</p>
+              </div>
+
+              <div class="metric-item">
+                <div class="metric-icon-wrap"><i class="fa-solid fa-award"></i></div>
+                <h4 class="metric-value">12+</h4>
+                <p class="metric-label">Years Experience</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Explore Prime Neighborhoods & Global Map -->
+      <section class="section neighborhoods-map-section">
+        <div class="section-container">
+          <div class="neighborhoods-map-grid">
+            <!-- Left Side: Neighborhoods Grid -->
+            <div class="neighborhoods-block">
+              <div class="section-header">
+                <h2 class="section-title">Explore Prime<br>Neighborhoods</h2>
+                <a href="#all-areas" class="view-all-link">
+                  <span>View All Areas</span>
+                  <div class="link-circle-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+                </a>
+              </div>
+
+              <div class="neighborhoods-cards-grid">
+                <!-- Neighborhood 1 -->
+                <div class="neighborhood-card glass-card">
+                  <div class="neighborhood-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1580655653885-65763b2597d0?auto=format&fit=crop&w=600&q=80" alt="Beverly Hills" class="neighborhood-img" loading="lazy">
+                  </div>
+                  <div class="neighborhood-info">
+                    <div>
+                      <h4 class="neighborhood-name">Beverly Hills</h4>
+                      <p class="neighborhood-state">California</p>
+                    </div>
+                    <a href="#beverly-hills" class="circle-btn" aria-label="Explore Beverly Hills"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- Neighborhood 2 -->
+                <div class="neighborhood-card glass-card">
+                  <div class="neighborhood-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80" alt="Palm Jumeirah" class="neighborhood-img" loading="lazy">
+                  </div>
+                  <div class="neighborhood-info">
+                    <div>
+                      <h4 class="neighborhood-name">Palm Jumeirah</h4>
+                      <p class="neighborhood-state">Dubai</p>
+                    </div>
+                    <a href="#palm-jumeirah" class="circle-btn" aria-label="Explore Palm Jumeirah"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- Neighborhood 3 -->
+                <div class="neighborhood-card glass-card">
+                  <div class="neighborhood-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1535498730771-e735b998cd64?auto=format&fit=crop&w=600&q=80" alt="Miami Beach" class="neighborhood-img" loading="lazy">
+                  </div>
+                  <div class="neighborhood-info">
+                    <div>
+                      <h4 class="neighborhood-name">Miami Beach</h4>
+                      <p class="neighborhood-state">Florida</p>
+                    </div>
+                    <a href="#miami-beach" class="circle-btn" aria-label="Explore Miami Beach"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+
+                <!-- Neighborhood 4 -->
+                <div class="neighborhood-card glass-card">
+                  <div class="neighborhood-img-wrap">
+                    <img src="https://images.unsplash.com/photo-1534430480872-3498386e7856?auto=format&fit=crop&w=600&q=80" alt="Manhattan" class="neighborhood-img" loading="lazy">
+                  </div>
+                  <div class="neighborhood-info">
+                    <div>
+                      <h4 class="neighborhood-name">Manhattan</h4>
+                      <p class="neighborhood-state">New York</p>
+                    </div>
+                    <a href="#manhattan" class="circle-btn" aria-label="Explore Manhattan"><i class="fa-solid fa-arrow-right"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Side: World Location Map -->
+            <div class="map-block glass-card">
+              <h3 class="map-title">Find Your Perfect<br>Location</h3>
+              <div class="world-map-wrapper">
+                <svg viewBox="0 0 1000 500" class="world-map-svg">
+                  <!-- Simplified stylised world landmass paths -->
+                  <path class="map-continent" d="M150,120 Q180,100 240,110 Q280,140 250,220 Q210,250 180,240 Q140,200 130,160 Z" />
+                  <path class="map-continent" d="M240,260 Q290,270 270,390 Q240,430 220,380 Q210,320 240,260 Z" />
+                  <path class="map-continent" d="M460,110 Q540,90 560,160 Q520,200 480,180 Q450,150 460,110 Z" />
+                  <path class="map-continent" d="M470,200 Q540,210 520,350 Q480,380 460,300 Q450,230 470,200 Z" />
+                  <path class="map-continent" d="M570,100 Q780,80 820,200 Q760,260 680,220 Q600,180 570,100 Z" />
+                  <path class="map-continent" d="M720,300 Q800,310 790,390 Q720,400 700,350 Z" />
+                  
+                  <!-- Pulsing Gold Luxury Location Pins -->
+                  <!-- Los Angeles / Malibu -->
+                  <g class="map-pin" transform="translate(170, 160)">
+                    <circle cx="0" cy="0" r="14" class="pin-pulse"/>
+                    <circle cx="0" cy="0" r="4.5" class="pin-dot"/>
+                  </g>
+                  <!-- New York / Miami -->
+                  <g class="map-pin" transform="translate(245, 175)">
+                    <circle cx="0" cy="0" r="14" class="pin-pulse"/>
+                    <circle cx="0" cy="0" r="4.5" class="pin-dot"/>
+                  </g>
+                  <g class="map-pin" transform="translate(240, 215)">
+                    <circle cx="0" cy="0" r="14" class="pin-pulse"/>
+                    <circle cx="0" cy="0" r="4.5" class="pin-dot"/>
+                  </g>
+                  <!-- London / Europe -->
+                  <g class="map-pin" transform="translate(480, 135)">
+                    <circle cx="0" cy="0" r="14" class="pin-pulse"/>
+                    <circle cx="0" cy="0" r="4.5" class="pin-dot"/>
+                  </g>
+                  <!-- Dubai -->
+                  <g class="map-pin" transform="translate(595, 195)">
+                    <circle cx="0" cy="0" r="14" class="pin-pulse"/>
+                    <circle cx="0" cy="0" r="4.5" class="pin-dot"/>
+                  </g>
+                  <!-- Singapore / Tokyo -->
+                  <g class="map-pin" transform="translate(735, 255)">
+                    <circle cx="0" cy="0" r="14" class="pin-pulse"/>
+                    <circle cx="0" cy="0" r="4.5" class="pin-dot"/>
+                  </g>
+                  <!-- Sydney -->
+                  <g class="map-pin" transform="translate(790, 360)">
+                    <circle cx="0" cy="0" r="14" class="pin-pulse"/>
+                    <circle cx="0" cy="0" r="4.5" class="pin-dot"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Testimonials & Exclusive Investments Showcase -->
+      <section class="section testimonials-investments-section" id="invest">
+        <div class="section-container">
+          <div class="testimonials-investments-grid">
+            <!-- Left: Client Testimonial -->
+            <div class="testimonial-card glass-card">
+              <h2 class="section-title">What Our Clients Say</h2>
+              <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="testimonial-text">
+                "From the first consultation to closing, Luxora Properties provided unmatched expertise and personalized service. Truly a world-class experience."
+              </p>
+              <div class="testimonial-author-row">
+                <div class="author-avatar-wrap">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Michael Thompson" class="author-avatar">
+                </div>
+                <div class="author-meta">
+                  <h4 class="author-name">Michael Thompson</h4>
+                  <p class="author-title">Entrepreneur, New York</p>
+                </div>
+              </div>
+              <div class="testimonial-pagination">
+                <button class="test-arrow-btn"><i class="fa-solid fa-arrow-left"></i></button>
+                <div class="test-dots">
+                  <span class="dot active"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Middle: Video Preview Card -->
+            <div class="video-preview-card glass-card">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Luxury Villa Video Preview" class="video-thumb">
+              <div class="video-overlay">
+                <button class="video-play-btn" aria-label="Play property video tour">
+                  <i class="fa-solid fa-play"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Exclusive Investment Opportunities -->
+            <div class="investment-info-card glass-card">
+              <h3 class="investment-title">Exclusive Investment<br>Opportunities</h3>
+              <p class="investment-subtitle">
+                High-value properties with exceptional returns. Discover our handpicked investment options.
+              </p>
+              <a href="#investments" class="btn btn-gold btn-sm">
+                <span>Explore Investments</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+
+              <div class="investment-features-list">
+                <div class="feature-item">
+                  <div class="feature-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                  <span class="feature-text">High ROI Potential</span>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                  <span class="feature-text">Market Insights</span>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon"><i class="fa-solid fa-briefcase"></i></div>
+                  <span class="feature-text">Portfolio Diversification</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Frequently Asked Questions (FAQ) Accordion -->
+      <section class="section faq-section">
+        <div class="section-container">
+          <h2 class="section-title text-center">Frequently Asked Questions</h2>
+
+          <div class="faq-grid">
+            <!-- FAQ 1 -->
+            <div class="faq-item glass-card">
+              <button class="faq-question" aria-expanded="false">
+                <span>How do I schedule a private tour?</span>
+                <i class="fa-solid fa-plus faq-toggle-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>You can easily schedule a private VIP tour by clicking the "Schedule a Private Tour" button or contacting our advisory team directly at +1 (800) 123-4567. We offer both private in-person accompanied viewings and live 4K virtual tours.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="faq-item glass-card">
+              <button class="faq-question" aria-expanded="false">
+                <span>What are the payment options?</span>
+                <div class="faq-q-right">
+                  <span class="faq-view-link">View All FAQs</span>
+                  <i class="fa-solid fa-plus faq-toggle-icon"></i>
+                </div>
+              </button>
+              <div class="faq-answer">
+                <p>We facilitate seamless transactions across wire transfers, institutional escrow services, private banking financing, and international multi-currency settlement options.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="faq-item glass-card">
+              <button class="faq-question" aria-expanded="false">
+                <span>Can you help with international purchases?</span>
+                <i class="fa-solid fa-plus faq-toggle-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Yes, Luxora Properties maintains cross-border legal, taxation, and title advisory desks in over 23 countries to facilitate smooth global acquisition for international buyers and cross-border investors.</p>
+              </div>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div class="faq-item glass-card">
+              <button class="faq-question" aria-expanded="false">
+                <span>Do you offer property management?</span>
+                <i class="fa-solid fa-plus faq-toggle-icon"></i>
+              </button>
+              <div class="faq-answer">
+                <p>Yes, our bespoke concierge division provides comprehensive luxury asset management, tenant vetting, maintenance, and seasonal estate supervision for high-net-worth property owners.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Pre-Footer Luxury CTA Banner -->
+      <section class="cta-banner-section" id="contact">
+        <div class="section-container">
+          <div class="cta-banner">
+            <div class="cta-banner-content">
+              <h2 class="cta-banner-title">Ready to Find Your Dream Property?</h2>
+              <p class="cta-banner-sub">Let our experts help you discover the perfect home or investment.</p>
+            </div>
+            <a href="#tours" class="btn btn-white">
+              <span>Get Started</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. Main Luxury Footer -->
+      <footer class="footer-section">
+        <div class="section-container">
+          <div class="footer-top-grid">
+            <!-- Brand Column -->
+            <div class="footer-col brand-col">
+              <div class="brand-logo">
+                <div class="brand-crest">
+                  <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
+                    <circle cx="20" cy="20" r="18" stroke="#c59b56" stroke-width="1.2"/>
+                    <path d="M15 12V28H25M15 20H23" stroke="#b88636" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div class="brand-text">
+                  <span class="brand-title">LUXORA</span>
+                  <span class="brand-subtitle">PROPERTIES</span>
+                </div>
+              </div>
+              <p class="footer-desc">
+                Redefining luxury real estate with exceptional properties and unmatched client experiences worldwide.
+              </p>
+              <div class="social-icons">
+                <a href="#" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+
+            <!-- Properties Column -->
+            <div class="footer-col">
+              <h4 class="footer-heading">Properties</h4>
+              <ul class="footer-nav-list">
+                <li><a href="#">All Properties</a></li>
+                <li><a href="#">New Listings</a></li>
+                <li><a href="#">Featured Homes</a></li>
+                <li><a href="#">Off Market</a></li>
+                <li><a href="#">Sold Properties</a></li>
+              </ul>
+            </div>
+
+            <!-- Buy Column -->
+            <div class="footer-col">
+              <h4 class="footer-heading">Buy</h4>
+              <ul class="footer-nav-list">
+                <li><a href="#">Search Properties</a></li>
+                <li><a href="#">Buyer Guide</a></li>
+                <li><a href="#">Financing</a></li>
+                <li><a href="#">Relocation Services</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </div>
+
+            <!-- Sell Column -->
+            <div class="footer-col">
+              <h4 class="footer-heading">Sell</h4>
+              <ul class="footer-nav-list">
+                <li><a href="#">List Your Property</a></li>
+                <li><a href="#">Seller Guide</a></li>
+                <li><a href="#">Marketing Plan</a></li>
+                <li><a href="#">Home Valuation</a></li>
+                <li><a href="#">Success Stories</a></li>
+              </ul>
+            </div>
+
+            <!-- Company Column -->
+            <div class="footer-col">
+              <h4 class="footer-heading">Company</h4>
+              <ul class="footer-nav-list">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Agents</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">News & Media</a></li>
+                <li><a href="#">Contact Us</a></li>
+              </ul>
+            </div>
+
+            <!-- Newsletter Column -->
+            <div class="footer-col newsletter-col">
+              <h4 class="footer-heading">Newsletter</h4>
+              <p class="newsletter-sub">Subscribe for exclusive listings and market insights.</p>
+              <form class="newsletter-form" onsubmit="event.preventDefault();">
+                <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                <button type="submit" class="btn-send" aria-label="Subscribe to newsletter">
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <div class="footer-divider-line"></div>
+
+          <!-- Bottom Footer Bar -->
+          <div class="footer-bottom-row">
+            <p class="copyright-text">© 2025 Luxora Properties. All rights reserved.</p>
+            <div class="legal-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Sitemap</a>
+            </div>
+            <div class="designed-by">
+              <span>Designed with Excellence</span>
+              <i class="fa-regular fa-heart"></i>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- GSAP & Lenis CDN Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
