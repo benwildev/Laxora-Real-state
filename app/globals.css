@@ -2776,14 +2776,7 @@ button {
 .property-gallery-viewport {
   position: relative;
   width: 100%;
-  height: 380px;
-  background: #000000;
-}
-
-.gallery-main-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background: #0a0a0e;
 }
 
 .gallery-nav-overlay {
@@ -4712,8 +4705,9 @@ button {
 
 .gallery-main-img {
   width: 100%;
-  height: clamp(200px, 38vh, 400px);
+  height: clamp(240px, 42vh, 480px);
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
