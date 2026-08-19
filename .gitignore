@@ -4,6 +4,11 @@
 .pnp.js
 .yarn/install-state.gz
 
+# Large binary / source archives
+*.zip
+*.tar.gz
+*.rar
+
 # Testing
 /coverage
 
